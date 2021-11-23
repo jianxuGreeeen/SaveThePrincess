@@ -139,7 +139,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameStateExitGame.cpp" />
+    <ClCompile Include="GameStateInit.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="SaveThePrincess.cpp" />
+    <ClCompile Include="SystemInterface.cpp" />
+    <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameContext.h" />
+    <ClInclude Include="GameStateExitGame.h" />
+    <ClInclude Include="GameStateInit.h" />
+    <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="GameStateTypes.h" />
+    <ClInclude Include="Physics.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="SystemInterface.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
