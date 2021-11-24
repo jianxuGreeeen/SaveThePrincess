@@ -1,7 +1,12 @@
 #include "GameStateInit.h"
 #include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Object.h"
+#include "Characters.h"
+#include "Input.h"
+#include "Physics.h"
+#include "Renderer.h"
+#include "ResourceDB.h"
+#include "UI.h"
 #include <string>
 
 namespace {
@@ -21,9 +26,10 @@ void GameStateInit::Update(GameStateMachine& aStateMachine, GameContext& aContex
 	// By doing the two step approach, the app would look responsive
 	if (aContext.ResourceDB->Load(GameAssetFile)) {
 		
-		auto* pplayerResource = aContext.ResourceDB->GetPlayer();
+		auto spplayerResource = aContext.ResourceDB->GetPlayer();
 
-		aContext.LevelContext.Player = std::make_unique<Player>(*pplayerResource);
+		aContext.Player = std::make_unique<Player>(*spplayerResource, aContext);
+		aContext.Levels = aContext.ResourceDB->GetLevelList();
 
 		aStateMachine.Change(GameStateEnums::MainMenu);
 	}
@@ -42,7 +48,7 @@ void GameStateInit::OnEntry(GameStateMachine& aStateMachine, GameContext& aConte
 	aContext.PhysicsSystem = std::make_unique<Physics>();
 	aContext.ResourceDB = std::make_unique<ResourceDB>();
 	aContext.UISystem = std::make_unique<UI>();
-	aContext.AIPool = std::make_unique<ObjectPool<AI, ActorResource>>(ActorLimit);
+	aContext.AIPool = std::make_unique<ObjectPool<AI>>(ActorLimit);
 }
 void GameStateInit::OnExit(GameStateMachine& aStateMachine, GameContext& aContext) {
 

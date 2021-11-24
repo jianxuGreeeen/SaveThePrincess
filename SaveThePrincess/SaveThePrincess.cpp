@@ -3,102 +3,58 @@
 
 #include <iostream>
 #include "Game.h"
+// Stubbed out a general idea for a game loop.
+// This solution has a general flow for starting up and running levels.
+// Here are some point of interests
 
-// NOTES:
-// Player must travel through levels to save the princess
-// Each level may contain player, enemies, princess
-// 
-// Data on entities:
-// Character    Health      Armor       Weapon          Movement
-// Player       100         100         Shotgun         Ground
-// Princess     80          0           None            Ground
-// Boss         500         100         Fireball/Axe    Ground/Air
-// Squab        50          0           Bomb            Air
-// Turtle       60          50          Shell Rock      Ground
-// Puffer       60          20          Poison Touch    Water
+// Game Class:
+//  Everything is contained within the Game class
+//  - Updates the game loop.
+//  - Holds data to systems that needs to exist for the entirety of the game.
+//  - This includes the various gameplay systems, physics, input, etc.
+//  - It also contains a state machine to transition between different states of the game.
+//  -   I tried this out as an attempt to organize the flow which consists of:
+//          - Starting up
+//          - Main menu
+//          - Loading a level
+//          - Running the level
+//          - Unloading a level
+//          - Exiting the game
+//      See GameStateMachine and associated files.
 
-// Brainstorm
+//  - Starting Up
+//  - Here we load in all of the resources. I assume there's some sort of file to load from
+//  - These resources are loaded in as different types with IDs. (Resource.h)
+//  - We have a ResourceDB that will house all this data.
+//  - When we need to load levels, we can ask the db for info.
+//  - At this point, I'm going to assume everything is loaded up.
+ 
+//  - AI Pool
+//  - We initialize a pool of AI we can init from.
+//  - Levels will just grab from this pool on load and release on unload.
+//  - This prevents us from need to allocate in the middle of gameplay
+//    especially if it's costly.
+
+//  - Levels
+//  - A level acts mostly as a container of initialized AIs.
+//  - That way, we can loop and update them as needed. 
+//  - It also helps in initializing and cleaning up the AIs.
+
+//  - Characters
+//  - These are the run time objects that would represent
+//    the different characters in the spec.
+//    For the moment, they're composed of a set of components. 
+//         - Input
+//         - Physics
+//         - Weapons
+//         - Stats
+//         - Render
+//    They're still set up in a more traditional object oriented style as
+//    characters have their own update functions.
 //
-// Game loop -
-//  The loop needs to handle various systems. The core would be:
-//  Frame Time
-//      Some kind of way to retrieve the diff between current and previous frame time.
-//  Input
-//      Buffers for current and previous
-//  Render
-//      Particle
-//      Sprites
-//      Text
-//  Gameplay system Updates
-//      UI 
-//      Physics
-//      AI/Entity Movement
-//      Some sort of Game State
-//          - Go between levels
-//          - Need to load different levels
+//    An improvement here might be to move the ownership to the systems themselves.
+//    And then the Characters would simple be an ID to tie the components together.
 //      
-//
-// I think ideally, a lot of these should be multi threaded but I'm going to keep things simpel for now and revisit if there's a chance to do so.
-// The render system for example, should be on another thread and we would simply push what we want to render to it so it can run as fast as possible.
-//
-
-//  
-//  Probably want to suppose input mapping and turn keys into defined actions
-//  We'd have a potentially different mapping depending on what we're doing:
-//  Ex:    menu vs game - b button maps to back in the menu vs some gameplay action 
-   
-
-// Resource
-// ID -> enum for now
-
-// Components
-// Owner 
-// DamageComponent
-// InventoryComponent
-// MovementComponent
-
-// EntityResource
-// Name
-// ResourceID   -> Used to reset
-// Damage stats -> Damage Component wkptr
-// Weapon IDs -> Inventory Component wkptr
-// Movement IDs -> Movement Components wkptr
-// 
-// ProjectileResource
-// Damage stats -> Damage Component wkptr
-//                  -> Collision component
-//                  -> Stats component
-// 
-// Entity Pool
-// CreateNewEntity(ID)
-// Is AI Type -> picks the type of movement controller
-// Is Player Type -> picks the type of movement controller
-
-// Pool
-// Init (size )
-// Resource to EntityType
-// Create(ID)
-
-// Entity
-// name
-// Damage component
-// Inventory
-// movement component
-
-
-// Level
-// ID
-// List of resources IDs and positions
-
-// Event listener
-// subscribe to hit events
-// 
-
-// Systems
-// DamageSystem
-// InventorySystem
-// Movement
-// Collision
 
 int main()
 {
@@ -108,11 +64,3 @@ int main()
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

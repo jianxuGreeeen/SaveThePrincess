@@ -2,13 +2,17 @@
 #define RENDER_COMPONENT_H
 #pragma once
 #include "ComponentInterface.h"
-#include "Point2.h"
+#include "ActorResource.h"
+#include "GameContext.h"
 /// <summary>
-/// Processes player inputs, moving, attackin etc
+/// Used to draw the given object
 /// </summary>
-class RenderComponent final {
+class RenderComponent final : public ComponentInterface{
 public:
-	void Draw(Point2 Pos) {}
+	virtual void Update(Character& Owner, float DeltaTime, const GameContext& Context) override {}
+	virtual void Draw(const GameContext& Context) override {}
+	virtual void Init(const ActorResource& Resource, GameContext& Context) override {  }
+	virtual void Cleanup(GameContext& Context) override { }
 };
 
 #endif // RENDER_COMPONENT_H

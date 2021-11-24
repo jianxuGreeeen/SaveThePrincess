@@ -3,14 +3,18 @@
 #pragma once
 #include "ComponentInterface.h"
 #include <cstdint>
+
 /// <summary>
 /// contains health and armor
 /// </summary>
-class StatsComponent final {
+class StatsComponent final : public ComponentInterface {
 public:
 	StatsComponent() = default;
 
-	void SetInitialHealthAndArmor(int32_t HP, int32_t Armor) {}
+	virtual void Update(Character& Owner, float DeltaTime, const GameContext& Context) override {}
+	virtual void Draw(const GameContext& Context) override {}
+	virtual void Init(const ActorResource& Resource, GameContext& Context) override;
+	virtual void Cleanup(GameContext& Context) override { }
 
 private:
 	int32_t StartingHealth = 0;

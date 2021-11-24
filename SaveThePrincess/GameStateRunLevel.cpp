@@ -1,8 +1,11 @@
 #include "GameStateRunLevel.h"
 #include "GameContext.h"
 #include "GameStateMachine.h"
-
-
+#include "Input.h"
+#include "Level.h"
+#include "Physics.h"
+#include "Renderer.h"
+#include "UI.h"
 void GameStateRunLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
 
 	aContext.Timer.Update();
@@ -11,18 +14,22 @@ void GameStateRunLevel::Update(GameStateMachine& aStateMachine, GameContext& aCo
 
 	aContext.InputSystem->UpdateInputBuffers(dt, aContext);
 	aContext.UISystem->ProcessScreenInput(dt, aContext);
-	aContext.LevelContext.CurrentLevel->Update(dt, aContext);
+	aContext.CurrentLevel->Update(dt, aContext);
 	aContext.PhysicsSystem->Update(dt, aContext);
+
+	if (aContext.EndLevel) {
+		aStateMachine.Change(GameStateEnums::UnloadLevel);
+	}
 }
 void GameStateRunLevel::Draw(GameStateMachine& aStateMachine, GameContext& aContext) {
 	// need to ensure screens are drawing
-	aContext.LevelContext.CurrentLevel->Draw(aContext);
+	aContext.CurrentLevel->Draw(aContext);
 	aContext.UISystem->DrawScreens(aContext);
 	aContext.RenderSystem->Draw(aContext);
 }
 void GameStateRunLevel::OnEntry(GameStateMachine& aStateMachine, GameContext& aContext) {
-
+	aContext.EndLevel = false;
 }
 void GameStateRunLevel::OnExit(GameStateMachine& aStateMachine, GameContext& aContext) {
-
+	aContext.EndLevel = false;
 }

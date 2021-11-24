@@ -1,11 +1,18 @@
 #include "GameStateExitGame.h"
-
+#include "Characters.h"
 #include "GameContext.h"
 #include "GameStateMachine.h"
+#include "Input.h"
+#include "Level.h"
+#include "Physics.h"
+#include "Renderer.h"
+#include "ResourceDB.h"
+#include "UI.h"
 
 void GameStateExitGame::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
-	aContext.LevelContext.CurrentLevel = nullptr;
-	aContext.LevelContext.Player = nullptr;
+	aContext.Levels = nullptr;
+	aContext.CurrentLevel = nullptr;
+	aContext.Player = nullptr;
 	aContext.InputSystem = nullptr;
 	aContext.RenderSystem = nullptr;
 	aContext.PhysicsSystem = nullptr;

@@ -1,8 +1,8 @@
 #ifndef UI_H
 #define UI_H
 #pragma once
-#include <vector>
 #include "UIScreen.h"
+#include <vector>
 
 struct GameContext;
 class UI final

@@ -2,15 +2,9 @@
 #define COMPONENT_INTERFACE_H
 #pragma once
 
+class ActorResource;
+class Character;
 struct GameContext;
-
-enum class ComponentID {
-	PlayerInput,
-	AIController,
-	Physics,
-	Stats,
-	Weapons
-};
 
 /// <summary>
 /// Interface for a game component.
@@ -21,7 +15,11 @@ public:
 	ComponentInterface() = default;
 	virtual ~ComponentInterface() = default;
 
-	virtual void Update(float DeltaTime, const GameContext& Context) = 0;
+	virtual void Update(Character& Owner, float DeltaTime, const GameContext& Context) = 0;
+	virtual void Draw(const GameContext& Context) = 0;
+
+	virtual void Init(const ActorResource& Resource, GameContext& Context) = 0;
+	virtual void Cleanup(GameContext& Context) = 0;
 };
 
 #endif // COMPONENT_INTERFACE_H

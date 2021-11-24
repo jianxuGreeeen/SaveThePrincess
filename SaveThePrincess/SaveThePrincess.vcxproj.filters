@@ -78,6 +78,21 @@
     <ClCompile Include="Level.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Characters.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -134,9 +149,6 @@
     <ClInclude Include="ObjectPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentInterface.h">
-      <Filter>Components</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Systems</Filter>
     </ClInclude>
@@ -179,8 +191,14 @@
     <ClInclude Include="Camera.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="WeaponsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Characters.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentInterface.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,14 +3,17 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include "Object.h"
 #include "Camera.h"
-#include "LevelResource.h"
 
+
+class AI;
+struct GameContext;
+class LevelResource;
+class Player;
 
 /// <summary>
-/// Level defines the life time of our entities. Once the level ends,
-/// Objects needs to be cleaned up.
+/// Level knows about the loaded entities and can update them.
+/// Once the level ends, objects needs to be cleaned up.
 /// </summary>
 class Level final
 {
@@ -22,14 +25,14 @@ public:
 
 	void Update(float DeltaTime, GameContext& Context);
 	void Draw(GameContext& Context);
-
+	void Cleanup(GameContext& Context);
 private:
-	void UpdateCamera(float DeltaTime, GameContext& Context) {}
-	void UpdateEntities(float DeltaTime, GameContext& Context) {}
-	void DrawEntities(GameContext& Context) {}
+	void UpdateCamera(float DeltaTime, GameContext& Context);
+	void UpdateEntities(float DeltaTime, GameContext& Context);
+	void DrawEntities(GameContext& Context);
 
-	void InitCamera(const Player& aPlayer) {}
-	void InitPlayerPosition(const LevelResource& Resource, GameContext& aContext) {}
+	void InitCamera(const Player& aPlayer);
+	void InitPlayerPosition(const LevelResource& Resource, GameContext& aContext);
 
 	std::vector<std::weak_ptr<AI>> AIs;
 

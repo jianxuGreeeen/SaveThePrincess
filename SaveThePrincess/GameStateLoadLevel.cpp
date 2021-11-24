@@ -1,6 +1,10 @@
 #include "GameStateLoadLevel.h"
 #include "GameContext.h"
 #include "GameStateMachine.h"
+#include "Level.h"
+#include "Renderer.h"
+#include "ResourceDB.h"
+#include "UI.h"
 #include "UIScreen.h"
 
 void GameStateLoadLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
@@ -9,10 +13,11 @@ void GameStateLoadLevel::Update(GameStateMachine& aStateMachine, GameContext& aC
 
 	float dt = aContext.Timer.GetDeltaTime();
 
-	const LevelResource* plevelResource = aContext.ResourceDB->GetResource<LevelResource>(aContext.NextLevelRequest);
-	if (plevelResource != nullptr) {
+	auto splevelResource = aContext.ResourceDB->GetResource<LevelResource>(aContext.NextLevelRequest);
+	if (splevelResource != nullptr) {
 		
-		aContext.LevelContext.CurrentLevel = Level::LoadFromResource(*plevelResource, aContext);
+		// Load and move to running the level
+		aContext.CurrentLevel = Level::LoadFromResource(*splevelResource, aContext);
 		aStateMachine.Change(GameStateEnums::RunLevel);
 	}
 	else {

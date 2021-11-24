@@ -17,15 +17,6 @@ enum class ResourceClass {
 /// <summary>
 /// Base definition for a resource.
 /// Resource is a piece of data loaded in and used by the game.
-/// These would be the resources:
-/// Character    Health      Armor       Weapon          Movement
-/// Player       100         100         Shotgun         Ground
-/// Princess     80          0           None            Ground
-/// Boss         500         100         Fireball/Axe    Ground/Air
-/// Squab        50          0           Bomb            Air
-/// Turtle       60          50          Shell Rock      Ground
-/// Puffer       60          20          Poison Touch    Water
-/// In the game, we would use this to create instances of them
 /// </summary>
 class Resource {
 public:

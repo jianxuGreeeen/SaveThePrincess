@@ -7,8 +7,10 @@ struct GameContext;
 
 enum class InputKey : uint32_t {
 	Enter,
+	Exit,
 	// represents the key that the user is pressing. 
 	// Assumption here is keyboard for now.
+	Left,
 };
 
 class Input final

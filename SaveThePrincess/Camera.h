@@ -3,13 +3,13 @@
 #pragma once
 #include "Point2.h"
 
-class Object;
+class Character;
 
 class Camera final
 {
 public:
-	void FollowTarget(const Object& Target);
-	void FocusOnTarget(const Object& Target);
+	void FollowTarget(const Character& Target);
+	void FocusOnTarget(const Character& Target);
 private:
 	Point2 Position;
 };

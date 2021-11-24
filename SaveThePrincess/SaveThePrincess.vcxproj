@@ -139,7 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Characters.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameContext.cpp" />
     <ClCompile Include="GameStateExitGame.cpp" />
     <ClCompile Include="GameStateInit.cpp" />
     <ClCompile Include="GameStateLoadLevel.cpp" />
@@ -150,17 +152,20 @@
     <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceDB.cpp" />
     <ClCompile Include="SaveThePrincess.cpp" />
+    <ClCompile Include="StatsComponent.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UIScreen.cpp" />
+    <ClCompile Include="WeaponsComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Object.h" />
+    <ClInclude Include="Characters.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="ComponentInterface.h" />
     <ClInclude Include="ActorResource.h" />
+    <ClInclude Include="ComponentInterface.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameContext.h" />
     <ClInclude Include="GameStateExitGame.h" />
@@ -191,6 +196,7 @@
     <ClInclude Include="UIScreen.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="WeaponResource.h" />
+    <ClInclude Include="WeaponsComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
