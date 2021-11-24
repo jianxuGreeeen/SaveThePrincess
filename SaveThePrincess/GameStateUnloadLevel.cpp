@@ -19,6 +19,17 @@ void GameStateUnloadLevel::Update(GameStateMachine& aStateMachine, GameContext& 
 	// Then we could just call revert on the level to restore everything
 	// back to its original state without having to deallocate/reallocate
 	aContext.LevelContext.CurrentLevel = nullptr;
+
+	// Clean up object pools
+	aContext.AIPool->MarkAllUnused();
+
+	// If there's a next level, transition to next level via load level.
+	if (aContext.NextLevelRequest != Resource::InvalidID) {
+		aStateMachine.Change(GameStateEnums::LoadLevel);
+	}
+	else {
+		aStateMachine.Change(GameStateEnums::MainMenu);
+	}
 }
 void GameStateUnloadLevel::Draw(GameStateMachine& aStateMachine, GameContext& aContext) {
 	// need to ensure screens are drawing

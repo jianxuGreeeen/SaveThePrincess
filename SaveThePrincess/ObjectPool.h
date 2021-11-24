@@ -18,7 +18,7 @@ public:
 	~ObjectPool() {}
 
 	std::weak_ptr<InstanceType> TryCreate(const ResourceType& Resource) { return std::weak_ptr<InstanceType>(); }
-	void MarkUnused(InstanceType* Instance) {}
+	void MarkAllUnused() {}
 private:
 };
 
