@@ -1,11 +1,12 @@
-#pragma once
 #ifndef RENDERER_H
 #define RENDERER_H
-#include "SystemInterface.h"
-class Renderer final : public SystemInterface
+#pragma once
+struct GameContext;
+
+class Renderer final
 {
 public:
-	virtual void Update(float DeltaTime) override;
+	void Draw(GameContext& Context) {}
 };
 #endif // RENDERER_H
 

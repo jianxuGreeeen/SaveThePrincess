@@ -1,8 +1,12 @@
+#ifndef PHYSICS_H
+#define PHYSICS_H
 #pragma once
-#include "SystemInterface.h"
-class Physics final : public SystemInterface
+struct GameContext;
+
+class Physics final
 {
 public:
-	virtual void Update(float DeltaTime) override;
+	void Update(float DeltaTime, GameContext& Context);
 };
 
+#endif // PHYSICS_H

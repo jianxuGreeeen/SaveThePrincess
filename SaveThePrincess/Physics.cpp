@@ -1,5 +1,5 @@
 #include "Physics.h"
 
-void Physics::Update(float DeltaTime) {
+void Physics::Update(float DeltaTime, GameContext& Context) {
 
 }

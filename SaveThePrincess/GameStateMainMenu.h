@@ -1,15 +1,11 @@
-#ifndef GAME_STATE_INIT_H
-#define GAME_STATE_INIT_H
+#ifndef GAME_STATE_MAIN_MENU_H
+#define GAME_STATE_MAIN_MENU_H
 #pragma once
 #include "GameStateTypes.h"
 /// <summary>
-/// Used to initialize the game.
-/// This means loading in data such as:
-/// maps
-/// assets
-/// game data
+/// Main menu
 /// </summary>
-class GameStateInit final : public GameStateInterface
+class GameStateMainMenu final : public GameStateInterface
 {
 public:
 	virtual void Update(GameStateMachine& aStateMachine, GameContext& aContext) override;

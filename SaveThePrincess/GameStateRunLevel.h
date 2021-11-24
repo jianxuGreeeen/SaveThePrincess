@@ -1,15 +1,12 @@
-#ifndef GAME_STATE_INIT_H
-#define GAME_STATE_INIT_H
+#ifndef GAME_STATE_RUN_LEVEL_H
+#define GAME_STATE_RUN_LEVEL_H
 #pragma once
 #include "GameStateTypes.h"
+
 /// <summary>
-/// Used to initialize the game.
-/// This means loading in data such as:
-/// maps
-/// assets
-/// game data
+/// runs a level
 /// </summary>
-class GameStateInit final : public GameStateInterface
+class GameStateRunLevel final : public GameStateInterface
 {
 public:
 	virtual void Update(GameStateMachine& aStateMachine, GameContext& aContext) override;
@@ -17,5 +14,4 @@ public:
 	virtual void OnEntry(GameStateMachine& aStateMachine, GameContext& aContext) override;
 	virtual void OnExit(GameStateMachine& aStateMachine, GameContext& aContext) override;
 };
-#endif // GAME_STATE_INIT_H
-
+#endif // GAME_STATE_RUN_LEVEL_H

@@ -29,3 +29,9 @@ void GameStateMachine::Update() {
 		pCurrentState->Update(*this, ContextData);
 	}
 }
+
+void GameStateMachine::Draw() {
+	if (pCurrentState != nullptr) {
+		pCurrentState->Draw(*this, ContextData);
+	}
+}

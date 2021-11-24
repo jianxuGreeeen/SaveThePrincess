@@ -47,6 +47,59 @@
 //  We'd have a potentially different mapping depending on what we're doing:
 //  Ex:    menu vs game - b button maps to back in the menu vs some gameplay action 
    
+
+// Resource
+// ID -> enum for now
+
+// Components
+// Owner 
+// DamageComponent
+// InventoryComponent
+// MovementComponent
+
+// EntityResource
+// Name
+// ResourceID   -> Used to reset
+// Damage stats -> Damage Component wkptr
+// Weapon IDs -> Inventory Component wkptr
+// Movement IDs -> Movement Components wkptr
+// 
+// ProjectileResource
+// Damage stats -> Damage Component wkptr
+//                  -> Collision component
+//                  -> Stats component
+// 
+// Entity Pool
+// CreateNewEntity(ID)
+// Is AI Type -> picks the type of movement controller
+// Is Player Type -> picks the type of movement controller
+
+// Pool
+// Init (size )
+// Resource to EntityType
+// Create(ID)
+
+// Entity
+// name
+// Damage component
+// Inventory
+// movement component
+
+
+// Level
+// ID
+// List of resources IDs and positions
+
+// Event listener
+// subscribe to hit events
+// 
+
+// Systems
+// DamageSystem
+// InventorySystem
+// Movement
+// Collision
+
 int main()
 {
     Game game;

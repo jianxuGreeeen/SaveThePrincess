@@ -16,24 +16,24 @@
     <Filter Include="GameStates">
       <UniqueIdentifier>{1efde436-9a2d-4bb1-958b-cc92c56c18f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{598503b3-816c-4c2a-ba49-1b0676cd74a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{6ab8de1f-41e4-4c84-8549-d18480b0e626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{4cd483f9-3b0d-4aeb-8c6c-6273f86fee77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{cfa6c8d7-5242-4417-98d2-fb3b3a2303b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SaveThePrincess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameStateMachine.cpp">
@@ -45,21 +45,45 @@
     <ClCompile Include="GameStateExitGame.cpp">
       <Filter>GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceDB.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMainMenu.cpp">
+      <Filter>GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateUnloadLevel.cpp">
+      <Filter>GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateRunLevel.cpp">
+      <Filter>GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateLoadLevel.cpp">
+      <Filter>GameStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="UIScreen.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameContext.h">
@@ -68,14 +92,95 @@
     <ClInclude Include="GameStateTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameStateMachine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameStateInit.h">
       <Filter>GameStates</Filter>
     </ClInclude>
     <ClInclude Include="GameStateExitGame.h">
       <Filter>GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponResource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceDB.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementType.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelResource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Point2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMainMenu.h">
+      <Filter>GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateRunLevel.h">
+      <Filter>GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateLoadLevel.h">
+      <Filter>GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateUnloadLevel.h">
+      <Filter>GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentInterface.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIScreen.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorResource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

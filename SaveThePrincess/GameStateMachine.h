@@ -1,6 +1,6 @@
-#pragma once
 #ifndef GAME_STATE_MACHINE_H
 #define GAME_STATE_MACHINE_H
+#pragma once
 
 #include "GameStateTypes.h"
 
@@ -14,6 +14,7 @@ public:
 
 	void Change(GameStateEnums aNewState);
 	void Update();
+	void Draw();
 
 private:
 	GameContext& ContextData;

@@ -1,6 +1,6 @@
-#pragma once
 #ifndef GAME_STATE_ENUM_H
 #define GAME_STATE_ENUM_H
+#pragma once
 
 #include <cstdint>
 #include <memory>
@@ -11,7 +11,7 @@
 /// </summary>
 enum class GameStateEnums : uint8_t{
 	Init,
-	Idle,
+	MainMenu,
 	LoadLevel,
 	RunLevel,
 	UnloadLevel,
@@ -28,6 +28,7 @@ class GameStateMachine;
 class GameStateInterface {
 public:
 	virtual void Update(GameStateMachine& aStateMachine, GameContext& aContext) = 0;
+	virtual void Draw(GameStateMachine& aStateMachine, GameContext& aContext) = 0;
 	virtual void OnEntry(GameStateMachine& aStateMachine, GameContext& aContext) = 0;
 	virtual void OnExit(GameStateMachine& aStateMachine, GameContext& aContext) = 0;
 };
