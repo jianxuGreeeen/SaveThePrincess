@@ -1,7 +1,7 @@
 #include "PhysicsComponent.h"
-#include "ActorResource.h"
-#include "GameContext.h"
-#include "Physics.h"
+#include "../GameContext.h"
+#include "../Resource/ActorResource.h"
+#include "../Systems/Physics.h"
 #include <assert.h>
 
 void PhysicsComponent::Init(const ActorResource& Resource, GameContext& Context) { 

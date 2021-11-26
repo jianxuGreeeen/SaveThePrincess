@@ -1,11 +1,11 @@
 #include "GameStateLoadLevel.h"
-#include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Level.h"
-#include "Renderer.h"
-#include "ResourceDB.h"
-#include "UI.h"
-#include "UIScreen.h"
+#include "../GameContext.h"
+#include "../Menu/UIScreen.h"
+#include "../Objects/Level.h"
+#include "../Systems/Renderer.h"
+#include "../Systems/ResourceDB.h"
+#include "../Systems/UI.h"
 #include <assert.h>
 #include <cassert>
 void GameStateLoadLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {

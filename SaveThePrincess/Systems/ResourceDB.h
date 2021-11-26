@@ -1,12 +1,11 @@
 #ifndef RESOURCE_DB_H
 #define RESOURCE_DB_H
 #pragma once
-#include "Resource.h"
+#include "../Resource/Resource.h"
 
 #include <memory>
 #include <unordered_map>
 
-class Resource;
 class LevelListResource;
 class ActorResource;
 

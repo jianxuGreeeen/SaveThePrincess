@@ -1,8 +1,8 @@
 #include "UIScreen.h"
-#include "GameContext.h"
-#include "GameStateMachine.h"
-#include "Input.h"
-#include "LevelResource.h"
+#include "../GameContext.h"
+#include "../GameStates/GameStateMachine.h"
+#include "../Resource/LevelResource.h"
+#include "../Systems/Input.h"
 
 ScreenInputResult MainMenuScreen::ProcessScreenInput(float DeltaTime, GameContext& Context) {
 	

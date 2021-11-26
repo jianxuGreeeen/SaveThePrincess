@@ -1,9 +1,9 @@
 #include "GameStateUnloadLevel.h"
-#include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Level.h"
-#include "UI.h"
-#include "Renderer.h"
+#include "../GameContext.h"
+#include "../Objects/Level.h"
+#include "../Systems/UI.h"
+#include "../Systems/Renderer.h"
 #include <assert.h>
 
 void GameStateUnloadLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {

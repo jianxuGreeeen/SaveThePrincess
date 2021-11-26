@@ -1,7 +1,7 @@
 #include "WeaponsComponent.h"
-#include "ActorResource.h"
-#include "GameContext.h"
-#include "ResourceDB.h"
+#include "../GameContext.h"
+#include "../Resource/ActorResource.h"
+#include "../Systems/ResourceDB.h"
 #include <assert.h>
 void WeaponsComponent::Init(const ActorResource& Resource, GameContext& Context) {
 	assert(Context.ResourceDB != nullptr);

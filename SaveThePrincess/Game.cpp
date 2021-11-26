@@ -3,14 +3,13 @@
 #include <assert.h>
 #include <memory>
 #include "GameContext.h"
-#include "GameStateMachine.h"
-#include "GameStateInit.h"
-#include "GameStateExitGame.h"
-#include "GameStateLoadLevel.h"
-#include "GameStateRunLevel.h"
-#include "GameStateUnloadLevel.h"
-#include "GameStateMainMenu.h"
-
+#include "GameStates/GameStateMachine.h"
+#include "GameStates/GameStateInit.h"
+#include "GameStates/GameStateExitGame.h"
+#include "GameStates/GameStateLoadLevel.h"
+#include "GameStates/GameStateRunLevel.h"
+#include "GameStates/GameStateUnloadLevel.h"
+#include "GameStates/GameStateMainMenu.h"
 
 Game::Game() {}
 

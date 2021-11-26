@@ -1,8 +1,8 @@
 #include "Level.h"
 #include "Characters.h"
-#include "GameContext.h"
-#include "LevelResource.h"
-#include "ResourceDB.h"
+#include "../GameContext.h"
+#include "../Resource/LevelResource.h"
+#include "../Systems/ResourceDB.h"
 #include <assert.h>
 #include <cstdint>
 

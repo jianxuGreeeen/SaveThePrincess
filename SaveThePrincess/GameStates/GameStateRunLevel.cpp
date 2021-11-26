@@ -1,11 +1,11 @@
 #include "GameStateRunLevel.h"
-#include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Input.h"
-#include "Level.h"
-#include "Physics.h"
-#include "Renderer.h"
-#include "UI.h"
+#include "../GameContext.h"
+#include "../Objects/Level.h"
+#include "../Systems/Input.h"
+#include "../Systems/Physics.h"
+#include "../Systems/Renderer.h"
+#include "../Systems/UI.h"
 #include <assert.h>
 void GameStateRunLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
 	assert(aContext.CurrentLevel != nullptr);

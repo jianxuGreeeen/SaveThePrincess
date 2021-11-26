@@ -1,8 +1,8 @@
 #include "ResourceDB.h"
-#include "WeaponResource.h"
-#include "ActorResource.h"
-#include "LevelResource.h"
-#include "ResourceFile.h"
+#include "../Resource/WeaponResource.h"
+#include "../Resource/ActorResource.h"
+#include "../Resource/LevelResource.h"
+#include "../Objects/ResourceFile.h"
 
 /// <summary>
 /// </summary>

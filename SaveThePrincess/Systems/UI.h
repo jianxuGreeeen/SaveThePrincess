@@ -1,7 +1,7 @@
 #ifndef UI_H
 #define UI_H
 #pragma once
-#include "UIScreen.h"
+#include "../Menu/UIScreen.h"
 #include <vector>
 
 struct GameContext;

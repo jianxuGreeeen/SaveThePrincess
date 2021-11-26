@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 #pragma once
-#include "Point2.h"
+#include "../Point2.h"
 
 class Character;
 

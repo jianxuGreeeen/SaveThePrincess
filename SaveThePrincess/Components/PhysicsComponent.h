@@ -2,8 +2,8 @@
 #define PHYSICS_COMPONENT_H
 #pragma once
 #include "ComponentInterface.h"
-#include "MovementType.h"
-#include "Point2.h"
+#include "../MovementType.h"
+#include "../Point2.h"
 
 /// <summary>
 /// Goal is for this to move the object, 

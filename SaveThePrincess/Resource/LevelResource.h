@@ -2,11 +2,10 @@
 #define LEVEL_RESOURCE_H
 #pragma once
 
-#include <vector>
-#include "Point2.h"
 #include "Resource.h"
-#include "ResourceFile.h"
-
+#include "../Point2.h"
+#include "../Objects/ResourceFile.h"
+#include <vector>
 /// <summary>
 /// Each object in a level is represented by this
 /// </summary>

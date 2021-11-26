@@ -2,8 +2,8 @@
 #define RENDER_COMPONENT_H
 #pragma once
 #include "ComponentInterface.h"
-#include "ActorResource.h"
-#include "GameContext.h"
+#include "../Resource/ActorResource.h"
+#include "../GameContext.h"
 /// <summary>
 /// Used to draw the given object
 /// </summary>

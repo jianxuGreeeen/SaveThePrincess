@@ -4,9 +4,9 @@
 
 #include <memory>
 
-#include "ObjectPool.h"
-#include "Resource.h"
-#include "Timer.h"
+#include "Resource/Resource.h"
+#include "Systems/ObjectPool.h"
+#include "Systems/Timer.h"
 
 class AI;
 class Level;

@@ -5,7 +5,7 @@
 #include <array>
 #include <vector>
 #include "Resource.h"
-#include "MovementType.h"
+#include "../MovementType.h"
 
 class ResourceDB;
 class ActorResource : public Resource {

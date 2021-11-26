@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Resource.h"
-#include "ResourceFile.h"
+#include "../Objects/ResourceFile.h"
 
 /// <summary>
 /// Data to define weapons.

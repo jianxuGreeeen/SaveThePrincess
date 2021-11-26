@@ -2,12 +2,12 @@
 #define CHARACTERS_H
 #pragma once
 
-#include "InputComponent.h"
-#include "PhysicsComponent.h"
-#include "Point2.h"
-#include "RenderComponent.h"
-#include "StatsComponent.h"
-#include "WeaponsComponent.h"
+#include "../Components/InputComponent.h"
+#include "../Components/PhysicsComponent.h"
+#include "../Components/RenderComponent.h"
+#include "../Components/StatsComponent.h"
+#include "../Components/WeaponsComponent.h"
+#include "../Point2.h"
 #include <vector>
 #include <memory>
 

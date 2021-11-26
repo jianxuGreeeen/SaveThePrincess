@@ -1,13 +1,13 @@
 #include "GameStateExitGame.h"
-#include "Characters.h"
-#include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Input.h"
-#include "Level.h"
-#include "Physics.h"
-#include "Renderer.h"
-#include "ResourceDB.h"
-#include "UI.h"
+#include "../GameContext.h"
+#include "../Objects/Characters.h"
+#include "../Objects/Level.h"
+#include "../Systems/Input.h"
+#include "../Systems/Physics.h"
+#include "../Systems/Renderer.h"
+#include "../Systems/ResourceDB.h"
+#include "../Systems/UI.h"
 
 void GameStateExitGame::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
 	aContext.Levels = nullptr;

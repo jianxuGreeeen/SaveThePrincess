@@ -1,9 +1,9 @@
 #include "GameStateMainMenu.h"
-#include "GameContext.h"
 #include "GameStateMachine.h"
-#include "Input.h"
-#include "Renderer.h"
-#include "UI.h"
+#include "../GameContext.h"
+#include "../Systems/Input.h"
+#include "../Systems/Renderer.h"
+#include "../Systems/UI.h"
 #include <assert.h>
 
 void GameStateMainMenu::Update(GameStateMachine& aStateMachine, GameContext& aContext) {

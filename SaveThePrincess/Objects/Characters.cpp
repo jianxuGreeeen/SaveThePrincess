@@ -1,7 +1,7 @@
 #include "Characters.h"
-#include "ActorResource.h"
-#include "GameContext.h"
-#include "Physics.h"
+#include "../GameContext.h"
+#include "../Resource/ActorResource.h"
+#include "../Systems/Physics.h"
 
 void Character::Update(float DeltaTime, GameContext& Context) {
 	Stats.Update(*this, DeltaTime, Context);

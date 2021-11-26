@@ -3,7 +3,7 @@
 #pragma once
 
 #include "ComponentInterface.h"
-#include "MovementType.h"
+#include "../MovementType.h"
 
 class InputComponent : public ComponentInterface {
 protected:

@@ -1,5 +1,5 @@
 #include "Resource.h"
-#include "ResourceFile.h"
+#include "../Objects/ResourceFile.h"
 
 void Resource::Load(ResourceFile& aFile) {
 	LoadID(aFile);

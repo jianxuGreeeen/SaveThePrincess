@@ -3,7 +3,7 @@
 #pragma once
 
 #include "ComponentInterface.h"
-#include "WeaponResource.h"
+#include "../Resource/WeaponResource.h"
 #include <memory>
 #include <vector>
 
