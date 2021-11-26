@@ -6,7 +6,12 @@
 #include "Physics.h"
 #include "Renderer.h"
 #include "UI.h"
+#include <assert.h>
 void GameStateRunLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.CurrentLevel != nullptr);
+	assert(aContext.InputSystem != nullptr);
+	assert(aContext.PhysicsSystem != nullptr);
+	assert(aContext.UISystem != nullptr);
 
 	aContext.Timer.Update();
 
@@ -22,12 +27,25 @@ void GameStateRunLevel::Update(GameStateMachine& aStateMachine, GameContext& aCo
 	}
 }
 void GameStateRunLevel::Draw(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.CurrentLevel != nullptr);
+	assert(aContext.RenderSystem != nullptr);
+	assert(aContext.UISystem != nullptr);
 	// need to ensure screens are drawing
 	aContext.CurrentLevel->Draw(aContext);
 	aContext.UISystem->DrawScreens(aContext);
 	aContext.RenderSystem->Draw(aContext);
 }
 void GameStateRunLevel::OnEntry(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.CurrentLevel != nullptr);
+	assert(aContext.InputSystem != nullptr);
+	assert(aContext.RenderSystem != nullptr);
+	assert(aContext.PhysicsSystem != nullptr);
+	assert(aContext.ResourceDB != nullptr);
+	assert(aContext.UISystem != nullptr);
+	assert(aContext.AIPool != nullptr);
+	assert(aContext.Player != nullptr);
+	assert(aContext.Levels != nullptr);
+	
 	aContext.EndLevel = false;
 }
 void GameStateRunLevel::OnExit(GameStateMachine& aStateMachine, GameContext& aContext) {

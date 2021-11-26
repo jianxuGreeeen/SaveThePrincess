@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Game.h"
-// Stubbed out a general idea for a game loop.
+// Stubbed out a general idea for a game loop base on my understanding of the requirements.
 // This solution has a general flow for starting up and running levels.
 // Here are some point of interests
 
@@ -21,6 +21,9 @@
 //          - Unloading a level
 //          - Exiting the game
 //      See GameStateMachine and associated files.
+//  -   Looking back, I think the state machine helped make the flow a bit more explicit.
+//      But, I think it may be a bit too restrictive in the end. I had shied away
+//      from having callbacks all over the place initially.
 
 //  - Starting Up
 //  - Here we load in all of the resources. I assume there's some sort of file to load from

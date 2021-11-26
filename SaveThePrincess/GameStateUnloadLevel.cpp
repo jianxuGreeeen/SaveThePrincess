@@ -4,8 +4,11 @@
 #include "Level.h"
 #include "UI.h"
 #include "Renderer.h"
+#include <assert.h>
 
 void GameStateUnloadLevel::Update(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.AIPool != nullptr);
+	assert(aContext.CurrentLevel != nullptr);
 
 	aContext.Timer.Update();
 
@@ -35,11 +38,16 @@ void GameStateUnloadLevel::Update(GameStateMachine& aStateMachine, GameContext& 
 	}
 }
 void GameStateUnloadLevel::Draw(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.RenderSystem != nullptr);
+	assert(aContext.UISystem != nullptr);
 	// need to ensure screens are drawing
 	aContext.UISystem->DrawScreens(aContext);
 	aContext.RenderSystem->Draw(aContext);
 }
 void GameStateUnloadLevel::OnEntry(GameStateMachine& aStateMachine, GameContext& aContext) {
+	assert(aContext.AIPool != nullptr);
+	assert(aContext.CurrentLevel != nullptr);
+	assert(aContext.UISystem != nullptr);
 	// pop the loading screen up
 	aContext.UISystem->ClearAndSetScreen<LoadingScreen>();
 }

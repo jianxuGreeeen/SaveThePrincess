@@ -4,6 +4,7 @@
 #include "Characters.h"
 #include "Physics.h"
 #include "GameContext.h"
+#include <assert.h>
 
 namespace InputUtils {
 	/// <summary>
@@ -19,14 +20,18 @@ namespace InputUtils {
 	void PerformWaterMove(Character& Owner, float DeltaTime ) {}
 }
 
-void InputComponent::Update(Character& Owner, float DeltaTime, const GameContext& Context) {}
+void InputComponent::Update(Character& Owner, float DeltaTime, const GameContext& Context) {
+	assert(Context.InputSystem != nullptr);
+}
 void InputComponent::Draw(const GameContext& Context) {}
 void InputComponent::Init(const ActorResource& Resource, GameContext& Context) {
+	assert(Context.InputSystem != nullptr);
 	MoveFlags = Resource.GetMovementTypes();
 }
 void InputComponent::Cleanup(GameContext& Context) {}
 
 void PlayerInputComponent::Update(Character& Owner, float DeltaTime, const GameContext& Context) {
+	assert(Context.InputSystem != nullptr);
 	// move based on move type
 	Point2 Velocity;
 	if (Context.InputSystem->GetButtonPressed(InputKey::Left)) {
@@ -36,6 +41,7 @@ void PlayerInputComponent::Update(Character& Owner, float DeltaTime, const GameC
 }
 void PlayerInputComponent::Draw(const GameContext& Context) {}
 void PlayerInputComponent::Init(const ActorResource& Resource, GameContext& Context) {
+	assert(Context.InputSystem != nullptr);
 	InputComponent::Init(Resource, Context);
 }
 void PlayerInputComponent::Cleanup(GameContext& Context) {
@@ -44,9 +50,11 @@ void PlayerInputComponent::Cleanup(GameContext& Context) {
 
 void AIInputComponent::Update(Character& Owner, float DeltaTime, const GameContext& Context) {
 	// move based on move type
+	assert(Context.InputSystem != nullptr);
 }
 void AIInputComponent::Draw(const GameContext& Context) {}
 void AIInputComponent::Init(const ActorResource& Resource, GameContext& Context) {
+	assert(Context.InputSystem != nullptr);
 	InputComponent::Init(Resource, Context);
 }
 void AIInputComponent::Cleanup(GameContext& Context) {

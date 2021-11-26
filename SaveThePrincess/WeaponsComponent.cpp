@@ -2,7 +2,9 @@
 #include "ActorResource.h"
 #include "GameContext.h"
 #include "ResourceDB.h"
+#include <assert.h>
 void WeaponsComponent::Init(const ActorResource& Resource, GameContext& Context) {
+	assert(Context.ResourceDB != nullptr);
 	Weapons.clear();
 	
 	for (auto resourceID : Resource.GetWeapons()) {

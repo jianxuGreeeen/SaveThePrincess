@@ -3,19 +3,17 @@
 #include "GameContext.h"
 #include "LevelResource.h"
 #include "ResourceDB.h"
+#include <assert.h>
 #include <cstdint>
 
 std::unique_ptr<Level> Level::LoadFromResource(const LevelResource& Resource, GameContext& aContext) {
-	
+	assert(aContext.Player != nullptr);
 	std::unique_ptr<Level> level = nullptr;
 
 	// Consider adding a logging system so we can push issues
 	// to a visible spot instead of failing silently
-	auto spplayerResource = aContext.ResourceDB->GetPlayer();
-	bool success = spplayerResource != nullptr;
-
 	level = std::make_unique<Level>();
-
+	assert(level != nullptr);
 	for (const auto& AIResource : Resource.GetEntityResourceIDs())
 	{
 		auto spresource = aContext.ResourceDB->GetResource<ActorResource>(AIResource.Entity);
@@ -38,6 +36,7 @@ std::unique_ptr<Level> Level::LoadFromResource(const LevelResource& Resource, Ga
 }
 
 void Level::Update(float DeltaTime, GameContext& Context) {
+	assert(Context.Player != nullptr);
 	Context.Player->Update(DeltaTime, Context);
 	
 	UpdateEntities(DeltaTime, Context);
@@ -45,6 +44,7 @@ void Level::Update(float DeltaTime, GameContext& Context) {
 }
 
 void Level::Draw(GameContext& Context) {
+	assert(Context.Player != nullptr);
 	Context.Player->Draw(Context);
 	DrawEntities(Context);
 }

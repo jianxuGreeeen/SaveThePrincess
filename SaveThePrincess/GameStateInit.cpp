@@ -7,6 +7,7 @@
 #include "Renderer.h"
 #include "ResourceDB.h"
 #include "UI.h"
+#include <assert.h>
 #include <string>
 
 namespace {
@@ -31,6 +32,9 @@ void GameStateInit::Update(GameStateMachine& aStateMachine, GameContext& aContex
 		aContext.Player = std::make_unique<Player>(*spplayerResource, aContext);
 		aContext.Levels = aContext.ResourceDB->GetLevelList();
 
+		assert(aContext.Player != nullptr);
+		assert(aContext.Levels != nullptr);
+
 		aStateMachine.Change(GameStateEnums::MainMenu);
 	}
 	else {
@@ -49,6 +53,13 @@ void GameStateInit::OnEntry(GameStateMachine& aStateMachine, GameContext& aConte
 	aContext.ResourceDB = std::make_unique<ResourceDB>();
 	aContext.UISystem = std::make_unique<UI>();
 	aContext.AIPool = std::make_unique<ObjectPool<AI>>(ActorLimit);
+
+	assert(aContext.InputSystem != nullptr);
+	assert(aContext.RenderSystem != nullptr);
+	assert(aContext.PhysicsSystem != nullptr);
+	assert(aContext.ResourceDB != nullptr);
+	assert(aContext.UISystem != nullptr);
+	assert(aContext.AIPool != nullptr);
 }
 void GameStateInit::OnExit(GameStateMachine& aStateMachine, GameContext& aContext) {
 
